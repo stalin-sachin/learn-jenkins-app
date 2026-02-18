@@ -17,6 +17,11 @@ pipeline {
                     npm ci
                     npm run build
                     ls -la
+                    mkdir -p build
+                    touch build/index.html
+                    ls -la build/
+                    echo "Build Stage..." > build/index.html
+            
                 '''
             }
         }
@@ -29,6 +34,8 @@ pipeline {
             }
             steps {
                 sh  'echo "Test Stage..."'
+                sh 'grep "index.html" build/'
+
             }
         }
     }

@@ -34,7 +34,7 @@ pipeline {
             }
             steps {
                 sh  'echo "Test Stage..."'
-                sh 'grep "index.html" build/'
+                sh 'test -f build/index.html'
 
             }
         }
